@@ -27,5 +27,5 @@
     ### Redash
     * A dashboard building tool. Read more: https://redash.io/
 
-    <img src="/data/stack (2).jpg" alt="isolated" width="1000" height="250"/>
+    <img src="/data/stack (2).jpg" alt="isolated" width="1000" height="400"/>
     </details>
