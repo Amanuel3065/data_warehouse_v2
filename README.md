@@ -15,17 +15,17 @@
     <details>
     <summary> <b>Details about the tech-stack pipeline</b> </summary>
 
-### Apache Airflow
-* Apache Airflow is a platform to programmatically author, schedule, and monitor workflows. It is one of the most robust ETL (Extract, Transform, Load) workflow management tools, used by Data Engineers for orchestrating workflows or pipelines. Read more: https://airflow.apache.org/docs/
+    ### Apache Airflow
+    * Apache Airflow is a platform to programmatically author, schedule, and monitor workflows. It is one of the most robust ETL (Extract, Transform, Load) workflow management tools, used by Data Engineers for orchestrating workflows or pipelines. Read more: https://airflow.apache.org/docs/
 
-### PostgreSql
-* PostgreSql is a useful and common data warehouse tool maintained by an active community. It can also handle more than just one kind of data processing, which makes it a pretty compelling option. PostgreSQL works with almost any kind of programming language. Read more: https://www.postgresql.org/
+    ### PostgreSql
+    * PostgreSql is a useful and common data warehouse tool maintained by an active community. It can also handle more than just one kind of data processing, which makes it a pretty compelling option. PostgreSQL works with almost any kind of programming language. Read more: https://www.postgresql.org/
 
-### DBT 
-* DBT enables analytics engineers to transform data in their warehouses by simply writing select statements. dbt handles turning these select statements into tables and views.Read more: https://docs.getdbt.com/docs/building-a-dbt-project/documentation
+    ### DBT 
+    * DBT enables analytics engineers to transform data in their warehouses by simply writing select statements. dbt handles turning these select statements into tables and views.Read more: https://docs.getdbt.com/docs/building-a-dbt-project/documentation
 
-### Redash
-* A dashboard building tool. Read more: https://redash.io/
+    ### Redash
+    * A dashboard building tool. Read more: https://redash.io/
 
-<img src="/data/imageopt.png" alt="isolated" width="1000" height="250"/>
-</details>
+    <img src="/data/imageopt.png" alt="isolated" width="1000" height="250"/>
+    </details>
