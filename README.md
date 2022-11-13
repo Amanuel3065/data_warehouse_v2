@@ -13,7 +13,7 @@
 * This project aims to build a fully dockerized data warehousing tech stack. It utilizes different data engineering tools like PostgreSQL, Airflow, DBT and Redash. PostgreSql is used for data ware house, DBT for data transforming and airflow for automation and orchestrations. Finally, a redash dashboard will be built by connecting it to our data warehouse.
 
     <details>
-    <summary>Details about the tech-stack pipeline</summary>
+    <summary> <b>**Details about the tech-stack pipeline**</b> </summary>
 
 ### Apache Airflow
 * Apache Airflow is a platform to programmatically author, schedule, and monitor workflows. It is one of the most robust ETL (Extract, Transform, Load) workflow management tools, used by Data Engineers for orchestrating workflows or pipelines. Read more: https://airflow.apache.org/docs/
