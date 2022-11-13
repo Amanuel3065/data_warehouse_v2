@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: dwh_1
+  - name: pg_dwh
     description: "DWH database containing the data"
-    database: dwh_1
+    database: pg_dwh
     schema: public
     tables:
       - name: vehicles
