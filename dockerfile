@@ -1,26 +1,32 @@
+FROM python:3.8.1-slim-buster
 
-
-# For more information, please refer to https://aka.ms/vscode-docker-python
-FROM python:3.8-slim
-
-# Keeps Python from generating .pyc files in the container
-ENV PYTHONDONTWRITEBYTECODE=1
-
-# Turns off buffering for easier container logging
-ENV PYTHONUNBUFFERED=1
-
-# Install pip requirements
-COPY requirements.txt .
-RUN python -m pip install -r requirements.txt
-
+# Set working directory
 WORKDIR /app
-COPY . /app
 
-# Creates a non-root user with an explicit UID and adds permission to access the /app folder
-# For more info, please refer to https://aka.ms/vscode-docker-python-configure-containers
-RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
-USER appuser
+# Install OS dependencies
+RUN apt-get update && apt-get install -qq -y \
+    git gcc build-essential libpq-dev --fix-missing --no-install-recommends \ 
+    && apt-get clean
 
-# During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-#CMD ["python", "setup.py"]
-#CMD ["mlflow ui"]
+# latest version of pip
+RUN pip install --upgrade pip
+
+# Create directory for dbt config
+RUN mkdir -p /root/.dbt
+
+# Copy requirements.txt
+COPY requirements.txt requirements.txt
+
+# Install dependencies
+RUN pip install -r requirements.txt
+
+# Copy dbt profile
+COPY profiles.yml /root/.dbt/profiles.yml
+
+# Copy source code
+COPY ./dwh_dbt /app
+
+# Export environement variables for dbt
+
+# Start the dbt
+CMD ["dbt-rpc", "serve"]

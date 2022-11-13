@@ -72,6 +72,40 @@ x-airflow-common:
       condition: service_healthy
 
 services:
+
+  #dbt-server:
+   # build:
+    #  context: .
+     # dockerfile: dockerfile
+    #command: [ "dbt-rpc", "serve" ]
+    #env_file: .env
+    #environment:
+     # - DBT_ENABLE_LEGACY_LOGGER=True
+    #ports:
+     # - '8581:8580'
+    
+    #depends_on:
+     # - postgres
+
+    #volumes:
+     # - ./dwh_dbt:/app
+
+
+  dbt-console:
+    build:
+      context: .
+      dockerfile: dockerfile
+    command: [ "/bin/bash" ]
+    env_file: .env
+    stdin_open: true
+    tty: true
+    depends_on:
+      - postgres
+    ports:
+      - '8001:8001'
+    volumes:
+      - ./dwh_dbt:/app
+
   postgres:
     image: postgres:13
     environment:
@@ -80,7 +114,7 @@ services:
       POSTGRES_DB: airflow
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
-      - ./data/20181024_d1_0830_0900.csv:/var/lib/postgresql/data/20181024_d1_0830_0900.csv
+      - ./data/datamod.csv:/var/lib/postgresql/data/datamod.csv
     ports:
       - 5432:5432
     healthcheck:
